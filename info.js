@@ -57,7 +57,7 @@ const fungalComp = Vue.component('fungal-comp', {
             let calculated = []
             let original = []
             let transformed = {}
-            let outputsLoop1 = outputs
+            let outputsLoop1 = [...outputs]
             
             for (let i = 0; i < outputs.length; i++) {
                 let inInd = inputs.lastIndexOf(outputs[i])
