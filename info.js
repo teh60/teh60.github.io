@@ -105,9 +105,9 @@ const fungalComp = Vue.component('fungal-comp', {
                 //     outputMatAtFoundInd: outputs[inInd]
                 // })
                 let overwrittenShifts = inputs.map((mat, ind) => (mat == inputMat && ind != i) ? ind : -1)
-                console.log(overwrittenShifts)
+                // console.log(overwrittenShifts)
                 overwrittenShifts.forEach((prevInd) => {
-                    console.log(prevInd, i,JSON.stringify(calculated))
+                    // console.log(prevInd, i,JSON.stringify(calculated))
                     if (prevInd > -1 && prevInd < calculated.length && !calculated[prevInd].strike) {
                         calculated[prevInd].strike = prevInd < i
                     }
