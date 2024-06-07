@@ -179,7 +179,8 @@ const fungalComp = Vue.component('fungal-comp', {
                 <li>first input is input material, second input is output material</li>
                 <li>Tab and Shift Tab cycles to next and previous material input</li>
                 <li>When on output material hitting enter adds a new row (shift)</li>
-                <li> + , - , &uarr; , and &darr; are all self explanatory
+                <li> + , - , &uarr; , and &darr; are all self explanatory</li>
+                <li>"Update Link" updates browser URL so you can share configured shifts</li>
             </ul>
             <v-switch v-model="allowAny" title="Allow any material name"></v-switch>
             <div class="button link" @click="getLink" ><u>Update Link</u></div>
