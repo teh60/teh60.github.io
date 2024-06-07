@@ -1,0 +1,330 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+ :root {
+    margin: 0;
+    --border-color: rgb(145, 129, 103) solid 2px;
+}
+
+/* 
+    border: solid 2px #ded7ce;
+    border-radius: 2px;
+*/
+
+img {
+    border-style: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+html {
+    line-height: 1.15;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+/* Sections
+     ========================================================================== */
+
+/**
+   * Render the `main` element consistently in IE.
+   */
+
+main {
+    display: block;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin: 0;
+    /* 2 */
+}
+
+button,
+input {
+    /* 1 */
+    overflow: visible;
+}
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+
+button,
+select {
+    /* 1 */
+    text-transform: none;
+}
+
+@font-face {
+    font-family: noita;
+    src: url(noitafont/noita2.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+html {
+    background-color: black;
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: none;
+}
+
+input[type=text] {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.shifts-page {
+    font-family: 'noita';
+    background-color: black;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    bottom: 0px;
+    width: fit-content;
+    margin: auto;
+}
+
+.shifts-page p {
+    margin: 0;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.75rem 0;
+}
+
+.shifts p {
+    text-transform: capitalize;
+}
+
+.shifts-header {
+    display: flex;
+}
+
+.shifts-io {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.shifts-io input {
+    background: darkgrey
+}
+
+.link {
+    color: #2196f3;
+    cursor: pointer;
+    }
+    
+    .userShift .button {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background: #2196f3;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.userShift input {
+    font-size: 16px;
+}
+
+.material {
+    display: inline;
+}
+
+.material .tooltip p {
+    text-transform: none !important;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.info-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.tip>p {
+    position: relative;
+    top: 4px;
+}
+
+.switch-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+    margin: 0.2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #2196f3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196f3;
+    outline: auto 5px -webkit-focus-ring-color
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 17px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.tip {
+    display: inline;
+}
+
+.tip>p {
+    position: relative;
+    top: 4px;
+}
+
+.tip .tooltip,
+.shifts-header .tooltip {
+    min-width: 220px;
+    max-width: 400px;
+    min-height: 20px;
+    visibility: hidden;
+    background-color: rgb(17, 13, 12, 0.95);
+    color: white;
+    padding: 10px;
+    border: var(--border-color);
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    z-index: 3;
+    bottom: 100%;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    font-size: 1rem;
+    text-wrap: balance;
+}
+
+.shifts-header .tooltip p {
+    text-transform: none !important;
+    box-sizing: border-box;
+}
+
+.popup {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.autocomplete-results {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eeeeee;
+    max-height: 8em;
+    max-width: 16em;
+    overflow: auto;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: rgb(40, 40, 40);
+}
+
+.autocomplete-result {
+    list-style: none;
+    text-align: left;
+    padding: 4px 2px;
+    cursor: pointer;
+}
+
+.autocomplete-result.is-active,
+.autocomplete-result:hover {
+    background-color: hsl(0, 0%, 25%);
+    color: white;
+}
+
+.autocomplete {
+    display: flex;
+    width: 100%;
+}
+
+.fit {
+    min-width: 0px !important;
+}
+
+.tip:hover .tooltip,
+.shifts-header:hover .tooltip {
+    visibility: visible;
+    transform: none;
+}
