@@ -95,7 +95,7 @@ const fungalComp = Vue.component('fungal-comp', {
                 //     thirdMaterial: thirdMat,
                 //     transformed: JSON.parse(JSON.stringify(transformed))
                 // })
-                if (secondMat == thirdMat) {
+                if (transformed[thirdMat] == secondMat) {
                     thirdMat = false
                 }
                 // console.log({
