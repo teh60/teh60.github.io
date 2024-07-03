@@ -82,45 +82,33 @@ const fungalComp = Vue.component('fungal-comp', {
                 
                 if (inInd > i) {
                     thirdMat = outputs[inInd]
-                    // console.log("less",i,inInd)
                 } else if (transformed[secondMat] != secondMat) {
                     thirdMat = transformed[secondMat]
-                    // console.log("ineq",i,inInd)
                 }
-                // console.log({
-                //     shiftNumber: i,
-                //     inputFoundInOutput: inInd,
-                //     inputMaterial: inputMat,
-                //     secondMaterial: secondMat,
-                //     thirdMaterial: thirdMat,
-                //     transformed: JSON.parse(JSON.stringify(transformed))
-                // })
                 if (transformed[thirdMat] == secondMat) {
                     thirdMat = false
                 }
-                // console.log({
-                //     midMat: secondMat,
-                //     lastMat: thirdMat,
-                //     inputMatAtFoundInd: inputs[inInd],
-                //     outputMatAtFoundInd: outputs[inInd]
-                // })
-                let overwrittenShifts = inputs.map((mat, ind) => (mat == inputMat && ind != i) ? ind : -1)
-                // console.log(overwrittenShifts)
-                overwrittenShifts.forEach((prevInd) => {
-                    // console.log(prevInd, i,JSON.stringify(calculated))
-                    if (prevInd > -1 && prevInd < calculated.length && !calculated[prevInd].strike) {
-                        calculated[prevInd].strike = prevInd < i
-                    }
-                })
+
                 calculated[i] = {
                     matInput: inputMat,
                     matInputOutput: secondMat,
                     matOutput: thirdMat,
+                    strike: inputMat == secondMat,
                 }
                 original[i] = {
                     matInput: inputMat,
                     matInputOutput: originalOutput,
                 }
+                let overwrittenShifts = inputs.map((mat, ind) => (mat == inputMat && ind != i) ? ind : -1)
+                overwrittenShifts.forEach((prevInd) => {
+                    // console.log(prevInd, i,JSON.stringify(calculated))
+                    if (prevInd > -1 && prevInd < calculated.length && !calculated[prevInd].strike) {
+                        calculated[prevInd].strike = prevInd < i
+                        if (calculated[i].strike) {
+                            calculated[prevInd].strike = false
+                        }
+                    }
+                })
             }
             
             return {
